@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mi Página — Tu Nombre</title>
+  <title>Miguel Angel Atawi Zuniga Chacon</title>
+  <meta name="description" content="Página personal de miguel angel atawi zuniga chacon, estudiante y fundador de ARON y LANNi."/>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg:        #f5efe6;
-      --bg2:       #ede3d5;
-      --card:      #faf6f0;
-      --border:    #d6c9b5;
-      --brown:     #7c5c3e;
-      --brown-lt:  #a07850;
-      --text:      #2e2218;
-      --muted:     #7a6550;
-      --tag-bg:    #e8ddd0;
-      --accent:    #b06a2e;
+      --bg:        #1a1512;
+      --bg2:       #231e19;
+      --card:      #2b2420;
+      --border:    #3d3228;
+      --brown:     #c4a882;
+      --brown-lt:  #d4bc98;
+      --text:      #ede5d8;
+      --muted:     #9c8a76;
+      --tag-bg:    #312820;
+      --accent:    #c8915a;
 
       /* Contenedor fluido: mínimo 320px, máximo 860px, con padding lateral */
       --container: min(860px, 100% - 2rem);
@@ -348,7 +349,7 @@
 
   <!-- HEADER -->
   <header>
-    <span class="logo">tu.nombre</span>
+    <span class="logo">Miguel Angel Atawi Zuñiga Chacon</span>
     <nav>
       <a href="#sobre-mi">Sobre mí</a>
       <a href="#skills">Skills</a>
@@ -361,25 +362,18 @@
   <div class="hero">
 
     <!-- FOTO — reemplaza esto con tu imagen cuando la tengas -->
-    <div class="avatar">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="12" cy="8" r="4"/>
-        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-      </svg>
-      <span>Tu foto aquí</span>
-    </div>
+   <img class="avatar" src="../davinci results/imagenyo.jpg" style="object-fit:cover"/>
 
     <div class="hero-info">
-      <h1>Tu Nombre</h1>
+      <h1>Miguel Angel Atawi Zuñiga Chacon</h1>
       <p class="hero-role">// Estudiante · Carrera · Universidad</p>
       <p class="hero-bio">
-        Hola, soy estudiante de [carrera] en [universidad]. Me interesa [área de interés].
-        Aquí comparto mis proyectos y lo que voy aprendiendo.
+       Hola, soy estudiante de Ciencias de la Computacion en Universidad Catolica de San Pablo.  Aquí comparto mis proyectos y lo que voy aprendiendo.
       </p>
       <div class="tags">
-        <span class="tag">📍 Tu ciudad</span>
-        <span class="tag">🎓 Semestre X</span>
-        <span class="tag">💼 Buscando prácticas</span>
+        <span class="tag">📍 Arequipa</span>
+        <span class="tag">🎓 1 semestre</span>
+        <span class="tag">💼 Buscando proyectos</span>
       </div>
     </div>
 
@@ -391,8 +385,9 @@
   <section class="section" id="sobre-mi">
     <p class="section-title">// Sobre mí</p>
     <p class="about-text">
-      Escribe aquí algo más personal: de dónde eres, qué estudias, por qué elegiste esa carrera,
-      qué te gusta hacer fuera de clases. No tiene que ser formal — solo sé tú.
+       Elegí esta carrera porque me di cuenta de que con una compu e internet podés crear cosas que de verdad le cambian la vida a la gente. Eso me parece una locura en el buen sentido. Mi sueño es armar startups reales, unicornios si se puede, pero que sirvan para algo, no solo para crecer por crecer.
+Soy muy hincha de Latinoamérica. Amo esta región con todo, y siento que tiene un montón de potencial sin explotar. Si puedo aportar aunque sea un poco a que mejore, ya me doy por satisfecho.
+Fuera de eso toco guitarra, juego vóley, y me engancho fácil con cualquier cosa nueva que quiero aprender.
     </p>
   </section>
 
@@ -402,12 +397,12 @@
   <section class="section" id="skills">
     <p class="section-title">// Habilidades</p>
     <div class="skills-row">
-      <div class="skill-pill"><span class="skill-dot"></span>Skill 1</div>
-      <div class="skill-pill"><span class="skill-dot"></span>Skill 2</div>
-      <div class="skill-pill"><span class="skill-dot"></span>Skill 3</div>
-      <div class="skill-pill"><span class="skill-dot"></span>Skill 4</div>
-      <div class="skill-pill"><span class="skill-dot"></span>Skill 5</div>
-      <div class="skill-pill"><span class="skill-dot"></span>Skill 6</div>
+      <div class="skill-pill"><span class="skill-dot"></span>Code🖥️</div>
+      <div class="skill-pill"><span class="skill-dot"></span>Guitarra🎸</div>
+      <div class="skill-pill"><span class="skill-dot"></span>Voley🏐</div>
+      <div class="skill-pill"><span class="skill-dot"></span>Pintura🌄</div>
+      <div class="skill-pill"><span class="skill-dot"></span>Baile💃</div>
+      <div class="skill-pill"><span class="skill-dot"></span>Academicos🧑‍🎓</div>
     </div>
   </section>
 
@@ -420,24 +415,25 @@
 
       <div class="project-item">
         <div class="project-left">
-          <p class="project-name">Nombre del Proyecto</p>
-          <p class="project-desc">Descripción corta de qué hiciste, qué tecnologías usaste y cuál fue el resultado.</p>
+          <p class="project-name">ARON</p>
+          <p class="project-desc">Plataforma de recolección de residuos orgánicos domiciliarios. Le damos a cada hogar un tacho especial, recogemos sus residuos y les devolvemos abono o alimentos cultivados con ellos. Ciudades más limpias, residuos mejor aprovechados, ciclo completo.</p>
         </div>
         <span class="project-tag">categoría</span>
       </div>
 
       <div class="project-item">
         <div class="project-left">
-          <p class="project-name">Nombre del Proyecto</p>
-          <p class="project-desc">Descripción corta de qué hiciste, qué tecnologías usaste y cuál fue el resultado.</p>
+          <p class="project-name">LANNI</p>
+          <p class="project-desc">
+Plataforma que conecta tejedoras con personas que aman el tejido. Trabajamos con comunidades enteras y marcas para que las artesanas puedan mostrar su arte a mucha más gente, y los compradores encuentren desde piezas únicas hasta estilos que no encontrarían en ningún otro lado.</p>
         </div>
         <span class="project-tag">categoría</span>
       </div>
 
       <div class="project-item">
         <div class="project-left">
-          <p class="project-name">Nombre del Proyecto</p>
-          <p class="project-desc">Descripción corta de qué hiciste, qué tecnologías usaste y cuál fue el resultado.</p>
+          <p class="project-name">En desarrollo — Transporte público inteligente</p>
+          <p class="project-desc">Estoy trabajando en una plataforma para hacer que el bus en ciudades latinoamericanas deje de ser un caos. Rutas optimizadas con IA, horarios reales, ubicación en tiempo real, pagos desde el celular y sistema de calificación. Cuando el transporte público es bueno, más gente lo usa. Cuando más gente lo usa, las ciudades respiran. Todos ganan.</p>
         </div>
         <span class="project-tag">categoría</span>
       </div>
@@ -446,36 +442,62 @@
   </section>
 
   <hr class="sep"/>
-
   <!-- CONTACTO -->
   <section class="section" id="contacto">
     <p class="section-title">// Contacto</p>
     <div class="contact-block">
-
+ 
+      <!-- EMAIL -->
       <div class="contact-row">
-        <!-- email icon -->
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M2 4h20v16H2V4zm0 0l10 9 10-9"/>
         </svg>
-        <span>Correo: <a href="mailto:tucorreo@email.com">tucorreo@email.com</a></span>
+        <span>Correo: <a href="mikelozchmak@gmail.com">mikelozchmak@gmail.com</a></span>
       </div>
-
+ 
+      <!-- INSTAGRAM -->
       <div class="contact-row">
-        <!-- instagram icon -->
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
           <circle cx="12" cy="12" r="4"/>
           <circle cx="17.5" cy="6.5" r="1.2"/>
         </svg>
-        <span>Instagram: <a class="ig-link" href="https://instagram.com/tu_usuario" target="_blank" rel="noopener">@tu_usuario</a></span>
+        <span>Instagram: <a class="ig-link" href="https://instagram.com/angle.mig" target="_blank" rel="noopener">@angle.mig</a></span>
       </div>
-
+ 
+      <!-- LINKEDIN -->
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="var(--brown-lt)">
+          <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+        <span>LinkedIn: <a href="https://www.linkedin.com/in/mikelo-zuñiga-chacon-816471301" target="_blank" rel="noopener">linkedin.com/in/mikelo-zuñiga-chacon</a></span>
+      </div>
+ 
+      <!-- GITHUB -->
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="var(--brown-lt)">
+          <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+        </svg>
+        <span>GitHub: <a href="https://github.com/MiguelEZz" target="_blank" rel="noopener">github.com/MiguelEZz</a></span>
+      </div>
+ 
+      <!-- TWITTER / X -->
+      <div class="contact-row">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="var(--brown-lt)">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L2.25 2.25h6.988l4.27 5.647 4.735-5.647zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+        <span>Twitter / X: <a href="https://x.com/MakMikelo" target="_blank" rel="noopener">@MakMikelo</a></span>
+      </div>
+ 
     </div>
   </section>
+  
+  
 
   <!-- FOOTER -->
   <footer>
-    © 2026 Tu Nombre &nbsp;·&nbsp; hecho desde cero
+    © 2026 Miguel Angel Atawi Zuñiga Chacon &nbsp;·&nbsp; hecho desde cero
   </footer>
 
 </body>
