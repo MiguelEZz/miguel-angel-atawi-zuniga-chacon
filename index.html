@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Página — Tu Nombre</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:        #f5efe6;
+      --bg2:       #ede3d5;
+      --card:      #faf6f0;
+      --border:    #d6c9b5;
+      --brown:     #7c5c3e;
+      --brown-lt:  #a07850;
+      --text:      #2e2218;
+      --muted:     #7a6550;
+      --tag-bg:    #e8ddd0;
+      --accent:    #b06a2e;
+
+      /* Contenedor fluido: mínimo 320px, máximo 860px, con padding lateral */
+      --container: min(860px, 100% - 2rem);
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      font-size: clamp(14px, 1.6vw, 17px); /* base fluida */
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ── TOP BAR ── */
+    header {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      padding: clamp(0.7rem, 2vw, 1.1rem) clamp(1rem, 4vw, 3rem);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(0.72rem, 1.4vw, 0.95rem);
+      color: var(--brown);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.2rem 0;
+    }
+
+    nav a {
+      font-size: clamp(0.7rem, 1.3vw, 0.88rem);
+      color: var(--muted);
+      margin-left: clamp(0.8rem, 2vw, 1.8rem);
+      font-weight: 400;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    /* ── HERO ── */
+    .hero {
+      width: var(--container);
+      margin: 0 auto;
+      padding: clamp(2rem, 5vw, 4.5rem) 0 clamp(1.5rem, 3vw, 2.5rem);
+      display: flex;
+      gap: clamp(1.5rem, 3vw, 3rem);
+      align-items: flex-start;
+    }
+
+    /* FOTO */
+    .avatar {
+      flex-shrink: 0;
+      width: clamp(90px, 14vw, 150px);
+      height: clamp(90px, 14vw, 150px);
+      border-radius: clamp(10px, 2vw, 18px);
+      border: 2px solid var(--border);
+      background: var(--bg2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      overflow: hidden;
+    }
+
+    .avatar svg {
+      width: clamp(28px, 4vw, 46px);
+      height: clamp(28px, 4vw, 46px);
+      stroke: var(--border);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .avatar span {
+      font-size: clamp(0.5rem, 0.9vw, 0.65rem);
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 0 8px;
+    }
+
+    /* Para poner tu foto, reemplaza todo el .avatar por:
+       <img class="avatar" src="foto.jpg" style="object-fit:cover"> */
+
+    .hero-info { flex: 1; min-width: 0; }
+
+    .hero-info h1 {
+      font-size: clamp(1.5rem, 3.5vw, 2.4rem);
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-role {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(0.68rem, 1.2vw, 0.85rem);
+      color: var(--accent);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-bio {
+      font-size: clamp(0.82rem, 1.4vw, 0.95rem);
+      color: var(--muted);
+      max-width: 52ch;
+      margin-bottom: 1.2rem;
+      line-height: 1.7;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: clamp(0.65rem, 1.1vw, 0.78rem);
+      padding: 0.25rem 0.7rem;
+      color: var(--brown);
+      font-weight: 500;
+    }
+
+    /* ── DIVIDER ── */
+    .sep {
+      width: var(--container);
+      margin: 0 auto;
+      border: none;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      width: var(--container);
+      margin: 0 auto;
+      padding: clamp(1.5rem, 3vw, 2.5rem) 0;
+    }
+
+    .section-title {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(0.62rem, 1vw, 0.75rem);
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.2rem;
+    }
+
+    /* ── SOBRE MÍ ── */
+    .about-text {
+      font-size: clamp(0.84rem, 1.4vw, 0.96rem);
+      color: var(--muted);
+      max-width: 60ch;
+      line-height: 1.8;
+    }
+
+    /* ── SKILLS ── */
+    .skills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .skill-pill {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: clamp(0.35rem, 0.8vw, 0.5rem) clamp(0.7rem, 1.5vw, 1.1rem);
+      font-size: clamp(0.76rem, 1.2vw, 0.88rem);
+      color: var(--text);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .skill-pill:hover {
+      border-color: var(--brown-lt);
+      background: var(--bg2);
+    }
+
+    .skill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ── PROYECTOS ── */
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .project-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: clamp(1rem, 2vw, 1.4rem) clamp(1rem, 2.5vw, 1.6rem);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .project-item:hover { border-color: var(--brown-lt); }
+
+    .project-left { flex: 1; min-width: 0; }
+
+    .project-name {
+      font-size: clamp(0.88rem, 1.4vw, 1rem);
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.3rem;
+    }
+
+    .project-desc {
+      font-size: clamp(0.76rem, 1.2vw, 0.88rem);
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .project-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: clamp(0.58rem, 0.9vw, 0.68rem);
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 0.2rem 0.6rem;
+      color: var(--brown);
+      white-space: nowrap;
+      flex-shrink: 0;
+      align-self: flex-start;
+    }
+
+    /* ── CONTACTO ── */
+    .contact-block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: clamp(1.1rem, 2.5vw, 1.8rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      font-size: clamp(0.82rem, 1.3vw, 0.94rem);
+      color: var(--muted);
+    }
+
+    .contact-row svg {
+      width: clamp(16px, 2vw, 20px);
+      height: clamp(16px, 2vw, 20px);
+      fill: var(--brown-lt);
+      flex-shrink: 0;
+    }
+
+    .contact-row a {
+      color: var(--accent);
+      font-weight: 500;
+      transition: opacity 0.2s;
+    }
+
+    .contact-row a:hover { opacity: 0.7; }
+
+    .ig-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 600;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      width: var(--container);
+      margin: 0 auto;
+      padding: clamp(1rem, 2vw, 1.8rem) 0;
+      font-size: clamp(0.65rem, 1vw, 0.78rem);
+      color: var(--border);
+      font-family: 'DM Mono', monospace;
+    }
+
+    /* ── MOBILE: nav colapsa a iconos ── */
+    @media (max-width: 480px) {
+      nav a span { display: none; }
+      .hero { flex-direction: column; }
+      .avatar {
+        width: 80px;
+        height: 80px;
+      }
+      .project-item { flex-direction: column; gap: 0.6rem; }
+      .project-tag { align-self: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <span class="logo">tu.nombre</span>
+    <nav>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#skills">Skills</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+
+    <!-- FOTO — reemplaza esto con tu imagen cuando la tengas -->
+    <div class="avatar">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="8" r="4"/>
+        <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+      </svg>
+      <span>Tu foto aquí</span>
+    </div>
+
+    <div class="hero-info">
+      <h1>Tu Nombre</h1>
+      <p class="hero-role">// Estudiante · Carrera · Universidad</p>
+      <p class="hero-bio">
+        Hola, soy estudiante de [carrera] en [universidad]. Me interesa [área de interés].
+        Aquí comparto mis proyectos y lo que voy aprendiendo.
+      </p>
+      <div class="tags">
+        <span class="tag">📍 Tu ciudad</span>
+        <span class="tag">🎓 Semestre X</span>
+        <span class="tag">💼 Buscando prácticas</span>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="sep"/>
+
+  <!-- SOBRE MÍ -->
+  <section class="section" id="sobre-mi">
+    <p class="section-title">// Sobre mí</p>
+    <p class="about-text">
+      Escribe aquí algo más personal: de dónde eres, qué estudias, por qué elegiste esa carrera,
+      qué te gusta hacer fuera de clases. No tiene que ser formal — solo sé tú.
+    </p>
+  </section>
+
+  <hr class="sep"/>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <p class="section-title">// Habilidades</p>
+    <div class="skills-row">
+      <div class="skill-pill"><span class="skill-dot"></span>Skill 1</div>
+      <div class="skill-pill"><span class="skill-dot"></span>Skill 2</div>
+      <div class="skill-pill"><span class="skill-dot"></span>Skill 3</div>
+      <div class="skill-pill"><span class="skill-dot"></span>Skill 4</div>
+      <div class="skill-pill"><span class="skill-dot"></span>Skill 5</div>
+      <div class="skill-pill"><span class="skill-dot"></span>Skill 6</div>
+    </div>
+  </section>
+
+  <hr class="sep"/>
+
+  <!-- PROYECTOS -->
+  <section class="section" id="proyectos">
+    <p class="section-title">// Proyectos</p>
+    <div class="projects-list">
+
+      <div class="project-item">
+        <div class="project-left">
+          <p class="project-name">Nombre del Proyecto</p>
+          <p class="project-desc">Descripción corta de qué hiciste, qué tecnologías usaste y cuál fue el resultado.</p>
+        </div>
+        <span class="project-tag">categoría</span>
+      </div>
+
+      <div class="project-item">
+        <div class="project-left">
+          <p class="project-name">Nombre del Proyecto</p>
+          <p class="project-desc">Descripción corta de qué hiciste, qué tecnologías usaste y cuál fue el resultado.</p>
+        </div>
+        <span class="project-tag">categoría</span>
+      </div>
+
+      <div class="project-item">
+        <div class="project-left">
+          <p class="project-name">Nombre del Proyecto</p>
+          <p class="project-desc">Descripción corta de qué hiciste, qué tecnologías usaste y cuál fue el resultado.</p>
+        </div>
+        <span class="project-tag">categoría</span>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="sep"/>
+
+  <!-- CONTACTO -->
+  <section class="section" id="contacto">
+    <p class="section-title">// Contacto</p>
+    <div class="contact-block">
+
+      <div class="contact-row">
+        <!-- email icon -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 4h20v16H2V4zm0 0l10 9 10-9"/>
+        </svg>
+        <span>Correo: <a href="mailto:tucorreo@email.com">tucorreo@email.com</a></span>
+      </div>
+
+      <div class="contact-row">
+        <!-- instagram icon -->
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="1.2"/>
+        </svg>
+        <span>Instagram: <a class="ig-link" href="https://instagram.com/tu_usuario" target="_blank" rel="noopener">@tu_usuario</a></span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Tu Nombre &nbsp;·&nbsp; hecho desde cero
+  </footer>
+
+</body>
+</html>
